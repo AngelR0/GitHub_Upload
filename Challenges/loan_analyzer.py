@@ -3,9 +3,9 @@ import csv
 from pathlib import Path
 
 """Part 1: Automate the Calculations.
-
-Automate the calculations for the loan portfolio summaries.
+    Automate the calculations for the loan portfolio summaries.
 """
+
 loan_costs = [500, 600, 200, 1000, 450]
 
 # Print the number of loans from the list
@@ -23,8 +23,7 @@ print(f"The average loan price: {average_loan_price}.\n")
 
 
 """Part 2: Analyze Loan Data.
-
-Analyze the loan to determine the investment evaluation.
+    Analyze the loan to determine the investment evaluation.
 """
 
 loan = {
@@ -55,8 +54,7 @@ else:
 
 
 """Part 3: Perform Financial Calculations.
-
-Perform financial calculations using functions.
+    Perform financial calculations using functions.
 """
 
 
