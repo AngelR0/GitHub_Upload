@@ -2,7 +2,8 @@
 import csv
 from pathlib import Path
 
-"""Part 1: Automate the Calculations.
+"""
+Part 1: Automate the Calculations.
     Automate the calculations for the loan portfolio summaries.
 """
 
@@ -22,7 +23,8 @@ average_loan_price = sum_of_loans / number_of_loans
 print(f"The average loan price: {average_loan_price}.\n")
 
 
-"""Part 2: Analyze Loan Data.
+"""
+Part 2: Analyze Loan Data.
     Analyze the loan to determine the investment evaluation.
 """
 
@@ -53,7 +55,8 @@ else:
     print("The loan is too expensive and not worth the price.")
 
 
-"""Part 3: Perform Financial Calculations.
+"""
+Part 3: Perform Financial Calculations.
     Perform financial calculations using functions.
 """
 
@@ -85,15 +88,9 @@ present_value = calculate_present_value(
 print(f"The present value of the loan is: {present_value:.02f}\n")
 
 
-"""Part 4: Conditionally filter lists of loans.
-
-In this section, you will use a loop to iterate through a series of loans and select only the inexpensive loans.
-
-1. Create a new, empty list called `inexpensive_loans`.
-2. Use a for loop to select each loan from a list of loans.
-    a. Inside the for loop, write an if-statement to determine if the loan_price is less than or equal to 500
-    b. If the loan_price is less than or equal to 500 then append that loan to the `inexpensive_loans` list.
-3. Print the list of inexpensive_loans.
+"""
+Part 4: Conditionally filter lists of loans.
+    In this section, you will use a loop to iterate through a series of loans and select only the inexpensive loans.
 """
 
 loans = [
@@ -123,14 +120,15 @@ loans = [
     },
 ]
 
-# @TODO: Create an empty list called `inexpensive_loans`
-# YOUR CODE HERE!
+#   New list: `inexpensive_loans`
+inexpensive_loans = []
 
-# @TODO: Loop through all the loans and append any that cost $500 or less to the `inexpensive_loans` list
-# YOUR CODE HERE!
+#   Looping through all the loans and append any that cost $500 or less to the `inexpensive_loans` list
+for loan in loans:
+    if loan.get('loan_price') <= 500:
+        inexpensive_loans.append(loan)
 
-# @TODO: Print the `inexpensive_loans` list
-# YOUR CODE HERE!
+print(inexpensive_loans)
 
 
 """Part 5: Save the results.
