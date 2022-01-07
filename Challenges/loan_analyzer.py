@@ -9,16 +9,16 @@ Part 1: Automate the Calculations.
 
 loan_costs = [500, 600, 200, 1000, 450]
 
-# Print the number of loans from the list
+#   Print the number of loans from the list
 number_of_loans = len(loan_costs)
 print(f"Number of loans: {number_of_loans}.\n")
 
 
-# Print the total value of the loans
+#   Print the total value of the loans
 sum_of_loans = sum(loan_costs)
 print(f"Sum of loan: {sum_of_loans}.\n")
 
-# Print the average loan amount
+#   Print the average loan amount
 average_loan_price = sum_of_loans / number_of_loans
 print(f"The average loan price: {average_loan_price}.\n")
 
@@ -35,7 +35,7 @@ loan = {
     "future_value": 1000,
 }
 
-# Extract the Future Value and the Remaining Months
+#   Extract the Future Value and the Remaining Months
 face_value = loan.get("future_value")
 month_remaining = loan.get("remaining_months")
 
@@ -68,7 +68,7 @@ new_loan = {
     "future_value": 1000,
 }
 
-# Define a new function that will be used to calculate present value.
+#   Define a new function that will be used to calculate present value.
 
 
 def calculate_present_value(future_value, remaining_months, annual_discount_rate):
@@ -90,7 +90,7 @@ print(f"The present value of the loan is: {present_value:.02f}\n")
 
 """
 Part 4: Conditionally filter lists of loans.
-    In this section, you will use a loop to iterate through a series of loans and select only the inexpensive loans.
+    Looping to iterate through a series of loans and select only the inexpensive loans.
 """
 
 loans = [
@@ -131,27 +131,23 @@ for loan in loans:
 print(inexpensive_loans)
 
 
-"""Part 5: Save the results.
-
-Output this list of inexpensive loans to a csv file
-    1. Use `with open` to open a new CSV file.
-        a. Create a `csvwriter` using the `csv` library.
-        b. Use the new csvwriter to write the header variable as the first row.
-        c. Use a for loop to iterate through each loan in `inexpensive_loans`.
-            i. Use the csvwriter to write the `loan.values()` to a row in the CSV file.
-
-    Hint: Refer to the official documentation for the csv library.
-    https://docs.python.org/3/library/csv.html#writer-objects
-
+"""
+Part 5: Save the results.
+    Output this list of inexpensive loans to a csv file
 """
 
-# Set the output header
+#   Output header
 header = ["loan_price", "remaining_months",
           "repayment_interval", "future_value"]
 
-# Set the output file path
+#   Output file path
 output_path = Path("inexpensive_loans.csv")
 
-# @TODO: Use the csv library and `csv.writer` to write the header row
-# and each row of `loan.values()` from the `inexpensive_loans` list.
-# YOUR CODE HERE!
+print("\n")
+with open(output_path, 'w', newline='') as csvwriter:
+    csvwriter = csv.writer(csvwriter)
+
+    csvwriter.writerow(header)
+
+    for loan in inexpensive_loans:
+        csvwriter.writerow(loan.values())
